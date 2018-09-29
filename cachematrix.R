@@ -7,7 +7,7 @@
 
 # creates a wrapper for a cached vaue
 # usage : wrapped <- makeCacheMatrix(matrixobject)
-makeCacheMatrix <- function(x = numeric()) {
+makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
     set <- function(y) {
         x <<- y
