@@ -1,9 +1,13 @@
-## Put comments here that give an overall description of what your
-## functions do
+# to test this function:
+# create a sample square matrix that is reversible (det <> 0)
+# matrixobject = matrix(c(1,2,2,1), nrow=2, ncol=2)
+# wrapped <- makeCacheMatrix(matrixobject)
+# cacheSolve(wrapped)
+# cacheSolve(wrapped)
 
-## Write a short comment describing this function
-
-makeCacheMatrix <- function(x = matrix()) {
+# creates a wrapper for a cached vaue
+# usage : wrapped <- makeCacheMatrix(matrixobject)
+makeCacheMatrix <- function(x = numeric()) {
     m <- NULL
     set <- function(y) {
         x <<- y
@@ -17,11 +21,9 @@ makeCacheMatrix <- function(x = matrix()) {
          getsolve = getsolve)
 }
 
-
-## Write a short comment describing this function
-
+# calls on cach wrapper to calculated or use cached value
+# cacheSolve(wrapped)
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
     m <- x$getsolve()
     if(!is.null(m)) {
         message("getting cached data")
